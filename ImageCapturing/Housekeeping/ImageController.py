@@ -184,7 +184,7 @@ class ImageController:
             self.collector = ImageCollector.ImageCollector( setting = self.setting )
             self.controlImageDeleter()        
         except: 
-            print("Es ist etwas schief gelaufen. Vermutlich hat der Smartfarmer keine Internetverbindung.")
+            print("Es ist etwas schief gelaufen. Vermutlich hat der Smartfarmer keine Internetverbindung. Versuche es später erneut.")
      
 
     def controlImageDeleter(self):
