@@ -1,0 +1,9 @@
+#filename: /etc/xdg/lxsession/LXDE-pi/autostart
+
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+@lxterminal -e python3 /media/usb/smartfarming/ImageCapturing/Housekeeping/ControllerStarter.py
+@xscreensaver -no-splash
+point-rpi
+
+
