@@ -30,7 +30,7 @@ import PostConfiguration
 #=========================================================================
 
 OFFSET = 0
-INCREMENT = 21 # Achtung: Increment muss grösser als maxpost sein, sonst werden keine Posts gelöscht.
+INCREMENT = 71 # Achtung: Increment muss grösser als maxpost sein, sonst werden keine Posts gelöscht.
 ORDERBY_FIELD = 'timestamp'
 ORDER_DIRECTION = 'ASC'
 
