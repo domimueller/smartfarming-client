@@ -18,7 +18,7 @@
 #==========================================================================
 
 import picamera
-
+import cv2
 #==========================================================================
 # CONSTANTS
 #==========================================================================
@@ -47,6 +47,18 @@ class ImageProvider:
     triggerImageCapture(self, setting)
         See description below.
     """    
+
+   def equalize_clahe_color_hsv(img):
+        """Equalize the image splitting it after conversion to HSV and applying CLAHE
+        to the V channel and merging the channels and convert back to BGR
+        """
+    
+        cla = cv2.createCLAHE(clipLimit=4.0)
+        H, S, V = cv2.split(cv2.cvtColor(img, cv2.COLOR_BGR2HSV))
+        eq_V = cla.apply(V)
+        eq_image = cv2.cvtColor(cv2.merge([H, S, eq_V]), cv2.COLOR_HSV2BGR)
+        return eq_image
+    
 
    def triggerImageCapture(self, setting):
         
@@ -84,7 +96,10 @@ class ImageProvider:
             camera.stop_preview()
             
             print('Datei mit Dateiname ' + str(self.setting.filename) + ' erstellt!')
+            self.setting.filename = self.equalize_clahe_color_hsv(self.setting.filename)
 
+    
+        
 
 #==========================================================================
 # END
