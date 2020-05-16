@@ -11,8 +11,7 @@ To use the Client, please add a file named Credentials.json to the security pack
 
 {
 		"user": "<<your CMS username>>",
-		"password": "<<your CMS Password>>"
-	
+		"password": "<<your CMS Password>>" 
 }
 
 Furthermore, go to the file Authenticator.py and substitute the URL constant with the URL of your Webpage's REST-API. 
